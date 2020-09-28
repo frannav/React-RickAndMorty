@@ -1,0 +1,11 @@
+.Nav {
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+}
+  
+Nav .Nav-logo {
+  height: 84px;
+  width: 84px;
+}
+  

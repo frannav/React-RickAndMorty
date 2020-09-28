@@ -1,0 +1,10 @@
+
+.App {
+  display: flex;
+  justify-content: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  
+}
+
