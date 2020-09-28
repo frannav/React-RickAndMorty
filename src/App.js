@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Nav from './components/nav';
 import CharacterListItem from './components/list-item';
-import data from './data.json';
+import { getDataFromAPI } from './services/api';
 
 export default function App() {
+  const [characters, setCharacters] = useState([]);
+
+  useEffect(() => {
+    getDataFromAPI().then(setCharacters);
+  }, [])
+
   return (
     <>
       <Nav />
       <div className="App">
         <section>
-          {data.results.map((item) => (
+          {characters.map((item) => (
             <CharacterListItem key={item.name} name={item.name}/>
           ))
           }
