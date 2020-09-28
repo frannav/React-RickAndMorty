@@ -7,13 +7,6 @@ describe("Rick and Morty App", () => {
 
   beforeAll(() => jest.spyOn(window, "fetch"));
 
-  it("Has a list of characters", () => {
-    const { getByText } = render(<App />);
-    for (let character of data.results) {
-      expect(getByText(character.name)).toBeInTheDocument();
-    }
-  });
-
   it("Shows a list of characters retrieved from an API",  async () => {
     window.fetch.mockResolvedValueOnce({
       ok: true,
